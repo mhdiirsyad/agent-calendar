@@ -8,8 +8,7 @@
             "root": "backend",
             "framework": "express",
             "entrypoint": "dist/index.mjs",
-            "buildCommand": "npm run build",
-            "startCommand": "npm run start"
+            "buildCommand": "npm run build"
         }
     },
     "rewrites": [
