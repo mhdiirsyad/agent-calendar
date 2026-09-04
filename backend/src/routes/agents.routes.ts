@@ -1,6 +1,6 @@
 import { Request, Router } from "express";
 import z from "zod";
-import { requireSession } from "../middleware/requireSession.js";
+import { requireSession } from "../middleware/requireSession";
 import { agentMessageReply, deleteThread, getThreadMessages, listUserThreads } from "../services/agent.services.js";
 
 const agentSchema = z.object({

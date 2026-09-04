@@ -7,6 +7,7 @@ import { agentRouter } from "./routes/agents.routes.js"
 import { mountMCP } from "./mcp/mount.js"
 
 const app = express()
+const pool = getPool()
 const appOrigin = process.env.APP_URL ?? "http://localhost:3000"
 const port = process.env.PORT || 4000
 
@@ -19,7 +20,7 @@ app.use(express.json())
 
 app.get("/health", async(_req, res) => {
     try {
-        await getPool().query("SELECT 1")
+        await pool.query("SELECT 1")
         res.json({
             status: "ok",
             message: "server running",

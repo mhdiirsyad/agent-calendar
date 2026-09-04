@@ -1,6 +1,6 @@
 import { AuthenticatedExtra, defineTool } from "@descope/mcp-express";
 import z from "zod";
-import { listUpcomingMeetings } from "../services/calendar.services.js";
+import { listUpcomingMeetings } from "../services/calendar.services";
 
 function textResult(data: unknown) {
     return {

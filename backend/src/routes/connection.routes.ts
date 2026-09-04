@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { requireSession } from "../middleware/requireSession.js";
+import { requireSession } from "../middleware/requireSession";
 import { createCalendarConnectUrl, getCalendarConnection, refreshCalendarConnection } from "../services/connection.services.js";
 
 export const connectionRouter = Router()
