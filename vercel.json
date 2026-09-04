@@ -7,7 +7,7 @@
         "backend": {
             "root": "backend",
             "framework": "express",
-            "entrypoint": "dist/index.mjs",
+            "entrypoint": "src/index.ts",
             "buildCommand": "npm run build"
         }
     },
