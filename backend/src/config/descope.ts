@@ -1,4 +1,5 @@
 import DescopeClient from "@descope/node-sdk"
+import "dotenv/config"
 import { warn } from "node:console"
 
 const projectId = process.env.DESCOPE_PROJECT_ID

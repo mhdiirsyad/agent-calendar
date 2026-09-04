@@ -1,3 +1,4 @@
+import "dotenv/config"
 import express from "express"
 import cors from "cors"
 import { getPool } from "./db/pool.js"
@@ -39,5 +40,3 @@ mountMCP(app)
 app.listen(port, () => {
     console.log(`Server running in port ${port}`)
 })
-
-export default app
