@@ -16,7 +16,7 @@ agentRouter.use(requireSession)
 
 agentRouter.get("/threads", async (req, res) => {
     try {
-        const threads = await listUserThreads(req.auth!.authUserId)
+        const threads = await listUserThreads(req.authentication!.authUserId)
         res.json({ threads })
     } catch (err) {
         const message = err instanceof Error ? err.message : "Failed to get threads"
@@ -31,7 +31,7 @@ agentRouter.get("/threads/:threadId", async (req, res) => {
         return
     }
     try {
-        const messages = await getThreadMessages(req.auth!.authUserId, parsed.data)
+        const messages = await getThreadMessages(req.authentication!.authUserId, parsed.data)
         res.json({ threadId: parsed.data, messages })
     } catch (err) {
         const message = err instanceof Error ? err.message : "Failed to get threads"
@@ -74,8 +74,8 @@ agentRouter.post("/chat", async (req, res) => {
 
     try {
         await agentMessageReply({
-            authUserId: req.auth!.authUserId,
-            userId: req.auth!.userId,
+            authUserId: req.authentication!.authUserId,
+            userId: req.authentication!.userId,
             threadId: parsed.data.threadId,
             message: parsed.data.message,
             onEvent: write
